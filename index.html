@@ -2,10 +2,35 @@
 <html>
     <head>
         <title>TapTask</title>
-        <link href="style.scss" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+        crossorigin="anonymous">
+        <link href="style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <h1>Hello</h1>
+        <div class="d-flex">
+            <div class="col-md-6 border-right py-2">
+                <div id="myDiv" class="header">
+                    <h2>My To Do List</h2>
+                    <input type="text" id="myInput" placeholder="Title...">
+                    <span class="addBtn">Add</span>
+                  </div>
+                  
+                  <ul id="myUL">
+                    <li class="task-items">Hit the gym</li>
+                    <li class="task-items">Pay bills</li>
+                    <li class="task-items">Meet George</li>
+                    <li class="task-items">Buy eggs</li>
+                    <li class="task-items">Read a book</li>
+                    <li class="task-items">Organize office</li>
+                  </ul>
+            </div>
+            <div class="col-md-6 py-2">
+                <div id="myDiv" class="header delete-header">
+                    <h2>Deleted List</h2>
+                  </div>
+            </div>
+        </div>
 
         <script type="text/javascript" src="index.js"></script>
     </body>
