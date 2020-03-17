@@ -8,27 +8,28 @@ const newTask = () => {
     var listTask = document.createElement("li");
     listTask.appendChild(document.createTextNode(inputText.value));
     uol.appendChild(listTask);
-    inputText.value =" ";
+    inputText.value = " ";
 }
+
 
 
 const onPressEnter = (e) => {
-    if(e.keyCode === 13){
+    if (e.keyCode === 13) {
         console.log("hello");
-        if(inputText.value.length > 0){
+        if (inputText.value.length > 0) {
             newTask();
         }
+        else {
+            alert("Enter text to add Task error not here");
+        }
     }
-    else{
-        alert("Enter text to add Task error not here");
-    } 
 }
 
 const onPressAdd = () => {
-    if(inputText.value.length > 0){
+    if (inputText.value.length > 0) {
         newTask();
     }
-    else{
+    else {
         alert("Enter text to add Task error not here");
     }
 }
