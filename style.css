@@ -63,17 +63,6 @@ ul li.checked::before {
   margin: 5px;
 }
 
-.close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 12px 16px 12px 16px;
-}
-.close:hover {
-  background-color: #f44336;
-  color: white;
-}
-
 input {
   margin: 0;
   border: none;
@@ -98,6 +87,10 @@ input {
 }
 .addBtn:hover {
   background-color: #bababa;
+}
+
+span, button {
+  float: right;
 }
 
 /*# sourceMappingURL=style.css.map */
