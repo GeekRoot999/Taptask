@@ -9,7 +9,6 @@ function darkMode(){
     dark.classList.toggle("dark")
 }
 
-
 const newTask = () => {
     const Compare = compareTask();
     if(Compare === false){
