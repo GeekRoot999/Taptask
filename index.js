@@ -3,12 +3,12 @@ var addTask = document.getElementsByClassName("addBtn")[0];
 var uol = document.getElementById("myUL");
 var TaskItems = document.getElementsByClassName("task-items");
 var deleteBtn =  document.createElement("button");
-var listOfItems = [
-    { id : 1, name: "task 1"}, 
-    { id : 2, name: "task 2"},
-    { id : 3, name: "task 3"},
-    { id : 4, name: "task 4"}
- ]
+
+function darkMode(){
+    var dark = document.body;
+    dark.classList.toggle("dark")
+}
+
 
 const newTask = () => {
     const Compare = compareTask();
@@ -21,10 +21,7 @@ const newTask = () => {
         listTask.appendChild(document.createTextNode(inputText.value));
         listTask.addEventListener("click", checked);
         listTask.appendChild(span);
-        deleteBtn.addEventListener("click", function(){
-            uol.removeChild(listTask);
-            addToAnotherUl(listTask.innerText);
-        })
+        deleteBtn.addEventListener("click", deleteItem)
         listTask.classList.add("task-items");
         uol.appendChild(listTask);
         inputText.value = "";
@@ -32,6 +29,11 @@ const newTask = () => {
     else{
         alert("Task already Exist");
     }
+}
+
+const deleteItem = () => {
+    uol.removeChild(listTask);
+    addToAnotherUl(listTask.innerText.slice(0, -6));
 }
 
 const compareTask = () => {
@@ -86,7 +88,7 @@ for(let i = 0; i < listTask.length; i++){
     listTask[i].appendChild(span);
     deleteBtn.addEventListener("click", function(){
         uol.removeChild(listTask[i]);
-        addToAnotherUl(listTask[i].innerText);
+        addToAnotherUl(listTask[i].innerText.slice(0, -6));
     })
 }
 
@@ -123,12 +125,15 @@ function addToAnotherUl(deletedValue) {
     var deleteul = document.createElement("ul");
     var deletelist = document.createElement("li");
     deletelist.innerText = deletedValue;
+    console.log(deletelist);
+    console.log(deletedValue);
     deleteul.appendChild(deletelist);
     document.getElementsByClassName("delete-header")[0].appendChild(deleteul);
     var restoreBtn = document.createElement("button");
     var restore = document.createTextNode("restore");
     restoreBtn.appendChild(restore);
     deletelist.appendChild(restoreBtn);
+    console.log(deletelist);
     restoreBtn.addEventListener("click", function(){
         deleteul.removeChild(deletelist);
         uol.appendChild(deletelist);

@@ -1,97 +1,307 @@
 
 
-body {
-  margin: 0;
-}
+// body {
+//   margin: 0;
+// }
 
-* {
-  box-sizing: border-box;
-}
+// * {
+//   box-sizing: border-box;
+// }
 
-ul {
-  margin: 0;
-  padding: 0;
-  li {
-    cursor: pointer;
-    position: relative;
-    padding: 12px 8px 12px 40px;
-    list-style-type: none;
-    background: #eee;
-    font-size: 18px;
-    transition: 0.2s;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    &:nth-child(odd) {
-      background: #f9f9f9;
+// ul {
+//   margin: 0;
+//   padding: 0;
+//   li {
+//     cursor: pointer;
+//     position: relative;
+//     padding: 12px 8px 12px 40px;
+//     border-bottom: 1px solid #1fc8db;
+//     border-right: 1px solid #1fc8db;
+//     border-left:  1px solid #1fc8db;
+//     list-style-type: none;
+//     background: rgb(250, 250, 250);
+//     font-size: 18px;
+//     transition: 0.2s;
+//     -webkit-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none;
+//     &:hover {
+//       background: rgb(187, 225, 226);
+//     }
+//     &.checked {
+//       background: #f83737c5;
+//       color: #fff;
+//       text-decoration: line-through;
+//       &::before {
+//         content: '';
+//         position: absolute;
+//         border-color: #fff;
+//         border-style: solid;
+//         border-width: 0 2px 2px 0;
+//         top: 16px;
+//         left: 16px;
+//         transform: rotate(45deg);
+//         height: 15px;
+//         width: 7px;
+//       }
+//     }
+//   }
+// }
+
+// .header {
+//   background-color: #1fc8db;
+//   background-image: linear-gradient(141deg, #1fc8db 51%, #2cb5e8 75%);
+//   padding: 30px 40px;
+//   color: white;
+//   text-align: center;
+//   &:after {
+//     content: "";
+//     display: table;
+//     clear: both;
+//   }
+//   h2{
+//     margin: 5px;
+//   }
+// }
+
+// input {
+//   margin: 0;
+//   border: none;
+//   border-radius: 0;
+//   width: 75%;
+//   padding: 10px;
+//   float: left;
+//   font-size: 16px;
+// }
+
+// .addBtn {
+//   padding: 10px;
+//   width: 25%;
+//   background: #0089d8;
+//   color: rgb(255, 255, 255);
+//   float: left;
+//   text-align: center;
+//   font-size: 16px;
+//   cursor: pointer;
+//   transition: 0.3s;
+//   border-radius: 0;
+//   &:hover {
+//     background-color: darken($color: #0089d8, $amount: 10) ;
+//   }
+// }
+
+// span, button{
+//   float: right;
+// }
+
+// button{
+//   color: #2cb5e8;
+//   background-color: white;
+//   border: 1px solid #2cb5e8;
+//   border-radius: 2px;
+//   padding: 5px 10px;
+//   font-size: 14px;
+//   &:hover{
+//     color: white;
+//   background-color: #2cb5e8;
+//   }
+// }
+
+body{
+  .header {
+    background-color: #1fc8db;
+    background-image: linear-gradient(141deg, #1fc8db 51%, #2cb5e8 75%);
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
     }
-    &:hover {
-      background: #ddd;
+    h2{
+      margin: 5px;
     }
-    &.checked {
-      background: #f83737c5;
-      color: #fff;
-      text-decoration: line-through;
-      &::before {
-        content: '';
-        position: absolute;
-        border-color: #fff;
-        border-style: solid;
-        border-width: 0 2px 2px 0;
-        top: 10px;
-        left: 16px;
-        transform: rotate(45deg);
-        height: 15px;
-        width: 7px;
+    input {
+      margin: 0;
+      border: none;
+      border-radius: 0;
+      width: 75%;
+      padding: 10px;
+      float: left;
+      font-size: 16px;
+    }
+    
+    .addBtn {
+      padding: 10px;
+      width: 25%;
+      background: #0089d8;
+      color: rgb(255, 255, 255);
+      float: left;
+      text-align: center;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      border-radius: 0;
+      &:hover {
+        background-color: darken($color: #0089d8, $amount: 10) ;
+      }
+    }
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      cursor: pointer;
+      position: relative;
+      padding: 12px 8px 12px 40px;
+      border-bottom: 1px solid #1fc8db;
+      border-right: 1px solid #1fc8db;
+      border-left:  1px solid #1fc8db;
+      list-style-type: none;
+      background: rgb(250, 250, 250);
+      font-size: 18px;
+      transition: 0.2s;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      &:hover {
+        background: rgb(187, 225, 226);
+      }
+      &.checked {
+        background: #f83737c5;
+        color: #fff;
+        text-decoration: line-through;
+        &::before {
+          content: '';
+          position: absolute;
+          border-color: #fff;
+          border-style: solid;
+          border-width: 0 2px 2px 0;
+          top: 16px;
+          left: 16px;
+          transform: rotate(45deg);
+          height: 15px;
+          width: 7px;
+        }
+      }
+      span, button{
+        float: right;
+      }
+      
+      button{
+        color: #2cb5e8;
+        background-color: white;
+        border: 1px solid #2cb5e8;
+        border-radius: 2px;
+        padding: 5px 10px;
+        font-size: 14px;
+        &:hover{
+          color: white;
+        background-color: #2cb5e8;
+        }
+      }
+    }
+  }
+  &.dark{
+    background: #000;
+    
+    .header {
+      background-color: #1fc8db;
+      background-image: linear-gradient(141deg, #1fc8db 51%, #2cb5e8 75%);
+      padding: 30px 40px;
+      color: white;
+      text-align: center;
+      &:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      h2{
+        margin: 5px;
+      }
+      input {
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        width: 75%;
+        padding: 10px;
+        float: left;
+        font-size: 16px;
+        background: #585858;
+        color: white;
+      }
+      
+      .addBtn {
+        padding: 10px;
+        width: 25%;
+        background: #0089d8;
+        color: rgb(255, 255, 255);
+        float: left;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 0;
+        &:hover {
+          background-color: darken($color: #0089d8, $amount: 10) ;
+        }
+      }
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        cursor: pointer;
+        position: relative;
+        padding: 12px 8px 12px 40px;
+        border-bottom: 1px solid #1fc8db;
+        border-right: 1px solid #1fc8db;
+        border-left:  1px solid #1fc8db;
+        list-style-type: none;
+        background: #383838;
+        font-size: 18px;
+        transition: 0.2s;
+        color: white;
+        &:hover {
+          background: #222222;
+        }
+        &.checked {
+          background: #f83737c5;
+          color: #fff;
+          text-decoration: line-through;
+          &::before {
+            content: '';
+            position: absolute;
+            border-color: #fff;
+            border-style: solid;
+            border-width: 0 2px 2px 0;
+            top: 16px;
+            left: 16px;
+            transform: rotate(45deg);
+            height: 15px;
+            width: 7px;
+          }
+        }
+        span, button{
+          float: right;
+        }
+        
+        button{
+          color: #2cb5e8;
+          background-color: black;
+          border: 1px solid #2cb5e8;
+          border-radius: 2px;
+          padding: 5px 10px;
+          font-size: 14px;
+          &:hover{
+            color: white;
+          background-color: #2cb5e8;
+          }
+        }
       }
     }
   }
 }
-
-.header {
-  background-color: #1fc8db;
-  background-image: linear-gradient(141deg, #1fc8db 51%, #2cb5e8 75%);
-  padding: 30px 40px;
-  color: white;
-  text-align: center;
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  h2{
-    margin: 5px;
-  }
-}
-
-input {
-  margin: 0;
-  border: none;
-  border-radius: 0;
-  width: 75%;
-  padding: 10px;
-  float: left;
-  font-size: 16px;
-}
-
-.addBtn {
-  padding: 10px;
-  width: 25%;
-  background: #d9d9d9;
-  color: #555;
-  float: left;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-  border-radius: 0;
-  &:hover {
-    background-color: darken($color: #d3d3d3, $amount: 10) ;
-  }
-}
-
-span, button{
-  float: right;
-}
-
