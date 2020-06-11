@@ -43,14 +43,14 @@ for(let i = 0; i < listTask.length; i++){
     });
     var span = document.createElement("span");
     var deleteBtn =  document.createElement("i");
-    // deleteBtn.innerText = "delete";
     deleteBtn.classList.add('fa');
     deleteBtn.classList.add('fa-trash')
     span.appendChild(deleteBtn);
     listTask[i].appendChild(span);
     deleteBtn.addEventListener("click", function(){
         onClickDelete(listTask[i]);
-        addToAnotherUl(listTask[i].innerText.slice(0, -6));
+        addToAnotherUl(listTask[i].innerText);
+        console.log(listTask[i].innerText);
     })
 }
 
@@ -102,7 +102,7 @@ function getCreateLI (title) {
     myListItem.addEventListener("click", checked);
     myListDelete.addEventListener("click", function(){
         onClickDelete(myListItem);
-        addToAnotherUl(myListItem.innerText.slice(0, -6));
+        addToAnotherUl(myListItem.innerText);
     });
 }
 
@@ -125,7 +125,7 @@ function addToMYUL(listItem){
     var addUL = document.getElementById("myUL");
     addUL.appendChild(listItem);
     var listItems = window.localStorage.getItem("listItems") || "";
-    const itemText = listItem.innerText.slice(0, -6).trim();
+    const itemText = listItem.innerText.trim();
     console.log("itemText", itemText, "listItems", listItems);
     if(listItems.includes(itemText)){
         return;
@@ -175,9 +175,12 @@ function createDeleteButton(){
 }
 // return restoreButton;
 function createRestoreButton(){
-    var restorebtn = document.createElement("button");
-    restorebtn.innerText="restore";
-    return restorebtn;
+    var span = document.createElement('span');
+    var restorebtn = document.createElement("i");
+    restorebtn.classList.add('fa');
+    restorebtn.classList.add('fa-trash-restore')
+    span.appendChild(restorebtn);
+    return span;
 }
 // return ;
 function addDeleteButtonToMyLI(deleteButton, listItem){
