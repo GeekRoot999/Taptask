@@ -2,7 +2,7 @@ var inputText = document.getElementById("myInput");
 var addTask = document.getElementsByClassName("addBtn")[0];
 var uol = document.getElementById("myUL");
 var TaskItems = document.getElementsByClassName("task-items");
-var deleteBtn =  document.createElement("button");
+var deleteBtn =  document.createElement("i");
 
 function darkMode(){
     var dark = document.body;
@@ -42,8 +42,10 @@ for(let i = 0; i < listTask.length; i++){
         event.target.classList.toggle("checked");
     });
     var span = document.createElement("span");
-    var deleteBtn =  document.createElement("button");
-    deleteBtn.innerText = "delete";
+    var deleteBtn =  document.createElement("i");
+    // deleteBtn.innerText = "delete";
+    deleteBtn.classList.add('fa');
+    deleteBtn.classList.add('fa-trash')
     span.appendChild(deleteBtn);
     listTask[i].appendChild(span);
     deleteBtn.addEventListener("click", function(){
@@ -164,9 +166,12 @@ function createRestoreLI(title){
 }
 // return deleteButton;
 function createDeleteButton(){
-    var deletebtn = document.createElement("button");
-    deletebtn.innerText="delete";
-    return deletebtn;
+    var span = document.createElement('span');
+    var deletebtn = document.createElement("i");
+    deletebtn.classList.add('fa');
+    deletebtn.classList.add('fa-trash');
+    span.append(deletebtn);
+    return span;
 }
 // return restoreButton;
 function createRestoreButton(){
@@ -202,29 +207,3 @@ function onClickRestore(listItem){
     var restoreUL = document.getElementById("restoreUL");
     restoreUL.removeChild(listItem);
 }
-
-
-// const newTask = () => {
-//     var currentList = document.querySelectorAll("li");
-//     for(let i = 0; i < currentList.length; i++){
-//         const listTaskValue = currentList[i].innerHTML.split('<span>')[0];
-//         if(listTaskValue.toLowerCase() == inputText.value.toLowerCase()){
-//             alert("task alreay exist");
-//             return;
-//         }
-//     }
-//     var span = document.createElement("span");
-//     var deleteBtn =  document.createElement("button");
-//     deleteBtn.innerText = "delete";
-//     span.appendChild(deleteBtn);
-//     var listTask = document.createElement("li");
-//     listTask.appendChild(document.createTextNode(inputText.value));
-//     listTask.addEventListener("click", checked);
-//     listTask.appendChild(span);
-//     deleteBtn.addEventListener("click", function(){
-//         uol.removeChild(listTask);
-//     })
-//     listTask.classList.add("task-items");
-//     uol.appendChild(listTask);
-//     inputText.value = "";
-// }

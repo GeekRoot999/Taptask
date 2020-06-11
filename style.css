@@ -1,85 +1,133 @@
+body .custom-control .custom-control-input {
+  border: none;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+body .custom-control .custom-control-input:focus {
+  outline: none;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 body .header {
   background-color: #1fc8db;
   background-image: linear-gradient(141deg, #1fc8db 51%, #2cb5e8 75%);
   padding: 30px 40px;
   color: white;
   text-align: center;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
+
 body .header:after {
   content: "";
   display: table;
   clear: both;
 }
+
 body .header h2 {
   margin: 5px;
 }
-body .header input {
-  margin: 0;
-  border: none;
-  border-radius: 0;
-  width: 75%;
-  padding: 10px;
-  float: left;
-  font-size: 16px;
-}
-body .header .addBtn {
-  padding: 10px;
-  width: 25%;
-  background: #0089d8;
-  color: white;
-  float: left;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-  border-radius: 0;
-}
-body .header .addBtn:hover {
-  background-color: #0069a5;
-}
+
 body ul {
   margin: 0;
   padding: 0;
 }
+
+body ul .add-items {
+  padding: 15px 20px 15px 35px;
+  border: 1px solid #fafafa;
+}
+
+body ul .add-items input {
+  margin: 0;
+  border: none;
+  font-size: 16px;
+  width: 75%;
+}
+
+body ul .add-items input:focus, body ul .add-items input:active, body ul .add-items input:hover {
+  border: none;
+  outline: none;
+}
+
+body ul .add-items .addBtn {
+  color: #0089d8;
+  float: right;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin: 10px;
+}
+
+body ul .add-items .addBtn:hover {
+  color: #0069a5;
+}
+
 body ul li {
   cursor: pointer;
   position: relative;
   padding: 12px 8px 12px 40px;
-  border-bottom: 1px solid #1fc8db;
-  border-right: 1px solid #1fc8db;
-  border-left: 1px solid #1fc8db;
+  border-bottom: 1px solid #fafafa;
+  border-right: 1px solid #fafafa;
+  border-left: 1px solid #fafafa;
   list-style-type: none;
-  background: #fafafa;
+  background: #fff;
   font-size: 18px;
+  -webkit-transition: 0.2s;
   transition: 0.2s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
+
+body ul li:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
 body ul li:hover {
   background: #bbe1e2;
 }
+
 body ul li.checked {
-  background: #f83737c5;
+  background: #2cb5e8;
   color: #fff;
   text-decoration: line-through;
 }
+
 body ul li.checked::before {
-  content: "";
+  content: '';
   position: absolute;
   border-color: #fff;
   border-style: solid;
   border-width: 0 2px 2px 0;
   top: 16px;
   left: 16px;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
   height: 15px;
   width: 7px;
 }
+
 body ul li span, body ul li button {
   float: right;
 }
+
+body ul li .fa-trash {
+  padding-right: 20px;
+  color: #ff4d4d;
+}
+
+body ul li .fa-trash:active, body ul li .fa-trash:hover {
+  color: red;
+}
+
 body ul li button {
   color: #2cb5e8;
   background-color: white;
@@ -88,28 +136,40 @@ body ul li button {
   padding: 5px 10px;
   font-size: 14px;
 }
+
 body ul li button:hover {
   color: white;
   background-color: #2cb5e8;
 }
+
 body.dark {
   background: #000;
 }
+
+body.dark .fa {
+  color: white;
+}
+
 body.dark .header {
   background-color: #1fc8db;
   background-image: linear-gradient(141deg, #1fc8db 51%, #2cb5e8 75%);
   padding: 30px 40px;
   color: white;
   text-align: center;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
+
 body.dark .header:after {
   content: "";
   display: table;
   clear: both;
 }
+
 body.dark .header h2 {
   margin: 5px;
 }
+
 body.dark .header input {
   margin: 0;
   border: none;
@@ -121,6 +181,7 @@ body.dark .header input {
   background: #585858;
   color: white;
 }
+
 body.dark .header .addBtn {
   padding: 10px;
   width: 25%;
@@ -130,52 +191,111 @@ body.dark .header .addBtn {
   text-align: center;
   font-size: 16px;
   cursor: pointer;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
   border-radius: 0;
 }
+
 body.dark .header .addBtn:hover {
   background-color: #0069a5;
 }
+
 body.dark ul {
   margin: 0;
   padding: 0;
 }
+
+body.dark ul .add-items {
+  padding: 15px 20px 15px 35px;
+  border: 1px solid #484848;
+  background: #383838;
+}
+
+body.dark ul .add-items input {
+  margin: 0;
+  border: none;
+  font-size: 16px;
+  width: 75%;
+  background: #383838;
+  color: white;
+}
+
+body.dark ul .add-items input:focus, body.dark ul .add-items input:active, body.dark ul .add-items input:hover {
+  border: none;
+  outline: none;
+}
+
+body.dark ul .add-items .addBtn {
+  color: #0089d8;
+  float: right;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin: 10px;
+}
+
+body.dark ul .add-items .addBtn:hover {
+  color: #0069a5;
+}
+
 body.dark ul li {
   cursor: pointer;
   position: relative;
   padding: 12px 8px 12px 40px;
-  border-bottom: 1px solid #1fc8db;
-  border-right: 1px solid #1fc8db;
-  border-left: 1px solid #1fc8db;
+  border-bottom: 1px solid #484848;
+  border-right: 1px solid #484848;
+  border-left: 1px solid #484848;
   list-style-type: none;
   background: #383838;
   font-size: 18px;
+  -webkit-transition: 0.2s;
   transition: 0.2s;
   color: white;
 }
+
+body.dark ul li:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
 body.dark ul li:hover {
   background: #375371;
 }
+
 body.dark ul li.checked {
-  background: #f83737c5;
+  background: #2cb5e8;
   color: #fff;
   text-decoration: line-through;
 }
+
 body.dark ul li.checked::before {
-  content: "";
+  content: '';
   position: absolute;
   border-color: #fff;
   border-style: solid;
   border-width: 0 2px 2px 0;
   top: 16px;
   left: 16px;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
   height: 15px;
   width: 7px;
 }
+
 body.dark ul li span, body.dark ul li button {
   float: right;
 }
+
+body.dark ul li .fa-trash {
+  padding-right: 20px;
+  color: #ff8080;
+}
+
+body.dark ul li .fa-trash:active, body.dark ul li .fa-trash:hover {
+  color: red;
+}
+
 body.dark ul li button {
   color: #2cb5e8;
   background-color: black;
@@ -184,9 +304,9 @@ body.dark ul li button {
   padding: 5px 10px;
   font-size: 14px;
 }
+
 body.dark ul li button:hover {
   color: white;
   background-color: #2cb5e8;
 }
-
 /*# sourceMappingURL=style.css.map */

@@ -5,27 +5,36 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
         crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
         <link href="style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <div class="text-center">
-            <button class="themes mb-2" onclick="darkMode()">Dark Mode</button>
+        <div class=" d-flex justify-content-center align-items-center my-2">
+            <i class="fa fa-lightbulb mr-2"></i>
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" onclick="darkMode()" id="customSwitch1">
+                <label class="custom-control-label" for="customSwitch1"></label>
+            </div>
+            <i class="fa fa-moon"></i>
         </div>
         <div class="d-flex">
             <div class="col-md-6 border-right py-2">
                 <div id="myDiv" class="header">
                     <h2>My To Do List</h2>
-                    <input type="text" id="myInput" placeholder="Title...">
-                    <span class="addBtn">Add</span>
                   </div>
                   
                   <ul id="myUL">
+                    <div class="add-items">
+                        <input type="text" id="myInput" placeholder="Type Something...">
+                        <i class="fa fa-check addBtn"></i>
+                    </div>
                     <li class="task-items">Meet Yamini</li>
                     <li class="task-items">Read JS Docs</li>
-                    <li class="task-items">Start doing Programms</li>
-                    <li class="task-items">Start going to Gym</li>
-                    <li class="task-items">Listen Avicci songs</li>
-                    <li class="task-items">Wake up Early Root.</li>
+                    <li class="task-items">Start doing Programs</li>
+                    <li class="task-items">Hit the Gym</li>
+                    <li class="task-items">Listen to Avicci songs</li>
+                    <li class="task-items">Wake up Early.</li>
                   </ul>
             </div>
             <div class="col-md-6 py-2">

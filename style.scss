@@ -1,120 +1,24 @@
-
-
-// body {
-//   margin: 0;
-// }
-
-// * {
-//   box-sizing: border-box;
-// }
-
-// ul {
-//   margin: 0;
-//   padding: 0;
-//   li {
-//     cursor: pointer;
-//     position: relative;
-//     padding: 12px 8px 12px 40px;
-//     border-bottom: 1px solid #1fc8db;
-//     border-right: 1px solid #1fc8db;
-//     border-left:  1px solid #1fc8db;
-//     list-style-type: none;
-//     background: rgb(250, 250, 250);
-//     font-size: 18px;
-//     transition: 0.2s;
-//     -webkit-user-select: none;
-//     -moz-user-select: none;
-//     -ms-user-select: none;
-//     user-select: none;
-//     &:hover {
-//       background: rgb(187, 225, 226);
-//     }
-//     &.checked {
-//       background: #f83737c5;
-//       color: #fff;
-//       text-decoration: line-through;
-//       &::before {
-//         content: '';
-//         position: absolute;
-//         border-color: #fff;
-//         border-style: solid;
-//         border-width: 0 2px 2px 0;
-//         top: 16px;
-//         left: 16px;
-//         transform: rotate(45deg);
-//         height: 15px;
-//         width: 7px;
-//       }
-//     }
-//   }
-// }
-
-// .header {
-//   background-color: #1fc8db;
-//   background-image: linear-gradient(141deg, #1fc8db 51%, #2cb5e8 75%);
-//   padding: 30px 40px;
-//   color: white;
-//   text-align: center;
-//   &:after {
-//     content: "";
-//     display: table;
-//     clear: both;
-//   }
-//   h2{
-//     margin: 5px;
-//   }
-// }
-
-// input {
-//   margin: 0;
-//   border: none;
-//   border-radius: 0;
-//   width: 75%;
-//   padding: 10px;
-//   float: left;
-//   font-size: 16px;
-// }
-
-// .addBtn {
-//   padding: 10px;
-//   width: 25%;
-//   background: #0089d8;
-//   color: rgb(255, 255, 255);
-//   float: left;
-//   text-align: center;
-//   font-size: 16px;
-//   cursor: pointer;
-//   transition: 0.3s;
-//   border-radius: 0;
-//   &:hover {
-//     background-color: darken($color: #0089d8, $amount: 10) ;
-//   }
-// }
-
-// span, button{
-//   float: right;
-// }
-
-// button{
-//   color: #2cb5e8;
-//   background-color: white;
-//   border: 1px solid #2cb5e8;
-//   border-radius: 2px;
-//   padding: 5px 10px;
-//   font-size: 14px;
-//   &:hover{
-//     color: white;
-//   background-color: #2cb5e8;
-//   }
-// }
-
 body{
+  .custom-control{
+    .custom-control-input{
+      border: none;
+      outline: none;
+      box-shadow: none;
+      &:focus{
+        outline: none;
+        border: none;
+        box-shadow: none;
+      }
+    }
+  }
   .header {
     background-color: #1fc8db;
     background-image: linear-gradient(141deg, #1fc8db 51%, #2cb5e8 75%);
     padding: 30px 40px;
     color: white;
     text-align: center;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
     &:after {
       content: "";
       display: table;
@@ -123,55 +27,61 @@ body{
     h2{
       margin: 5px;
     }
-    input {
-      margin: 0;
-      border: none;
-      border-radius: 0;
-      width: 75%;
-      padding: 10px;
-      float: left;
-      font-size: 16px;
-    }
     
-    .addBtn {
-      padding: 10px;
-      width: 25%;
-      background: #0089d8;
-      color: rgb(255, 255, 255);
-      float: left;
-      text-align: center;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s;
-      border-radius: 0;
-      &:hover {
-        background-color: darken($color: #0089d8, $amount: 10) ;
-      }
-    }
   }
   ul {
     margin: 0;
     padding: 0;
+    .add-items{
+      padding: 15px 20px 15px 35px;
+      border: 1px solid #fafafa;
+      input {
+        margin: 0;
+        border: none;
+        font-size: 16px;
+        width: 75%;
+        &:focus, &:active, &:hover{
+          border: none;
+          outline: none;
+        }
+      }
+      
+      .addBtn {
+        color: #0089d8;
+        float: right;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        margin: 10px;
+        &:hover {
+          color: darken($color: #0089d8, $amount: 10) ;
+        }
+      }
+    }
     li {
       cursor: pointer;
       position: relative;
       padding: 12px 8px 12px 40px;
-      border-bottom: 1px solid #1fc8db;
-      border-right: 1px solid #1fc8db;
-      border-left:  1px solid #1fc8db;
+      border-bottom: 1px solid #fafafa;
+      border-right: 1px solid #fafafa;
+      border-left:  1px solid #fafafa;
       list-style-type: none;
-      background: rgb(250, 250, 250);
+      background: #fff;
       font-size: 18px;
       transition: 0.2s;
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
+      &:last-child{
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px ;
+      }
       &:hover {
         background: rgb(187, 225, 226);
       }
       &.checked {
-        background: #f83737c5;
+        background: #2cb5e8;
         color: #fff;
         text-decoration: line-through;
         &::before {
@@ -190,6 +100,15 @@ body{
       span, button{
         float: right;
       }
+
+      .fa-trash{
+        padding-right: 20px;
+        color: lighten($color: red, $amount: 15);
+        &:active, &:hover{
+          color: red;
+        }
+      }
+      
       
       button{
         color: #2cb5e8;
@@ -207,6 +126,9 @@ body{
   }
   &.dark{
     background: #000;
+    .fa{
+      color: white;
+    }
     
     .header {
       background-color: #1fc8db;
@@ -214,6 +136,8 @@ body{
       padding: 30px 40px;
       color: white;
       text-align: center;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
       &:after {
         content: "";
         display: table;
@@ -253,23 +177,56 @@ body{
     ul {
       margin: 0;
       padding: 0;
+      .add-items{
+        padding: 15px 20px 15px 35px;
+        border: 1px solid #484848;
+        background: #383838;
+        input {
+          margin: 0;
+          border: none;
+          font-size: 16px;
+          width: 75%;
+          background: #383838;
+          color: white;
+          &:focus, &:active, &:hover{
+            border: none;
+            outline: none;
+          }
+        }
+        
+        .addBtn {
+          color: #0089d8;
+          float: right;
+          font-size: 16px;
+          cursor: pointer;
+          transition: 0.3s;
+          margin: 10px;
+          &:hover {
+            color: darken($color: #0089d8, $amount: 10) ;
+          }
+        }
+      }
       li {
         cursor: pointer;
         position: relative;
         padding: 12px 8px 12px 40px;
-        border-bottom: 1px solid #1fc8db;
-        border-right: 1px solid #1fc8db;
-        border-left:  1px solid #1fc8db;
+        border-bottom: 1px solid #484848;
+        border-right: 1px solid #484848;
+        border-left:  1px solid #484848;
         list-style-type: none;
         background: #383838;
         font-size: 18px;
         transition: 0.2s;
         color: white;
+        &:last-child{
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px ;
+        }
         &:hover {
           background: #375371;
         }
         &.checked {
-          background: #f83737c5;
+          background: #2cb5e8;
           color: #fff;
           text-decoration: line-through;
           &::before {
@@ -287,6 +244,13 @@ body{
         }
         span, button{
           float: right;
+        }
+        .fa-trash{
+          padding-right: 20px;
+          color: lighten($color: red, $amount: 25);
+          &:active, &:hover{
+            color: red;
+          }
         }
         
         button{
