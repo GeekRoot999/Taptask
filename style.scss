@@ -1,4 +1,10 @@
 body{
+  .fa-lightbulb{
+    color: darken($color: rgb(255, 230, 0), $amount: 0);
+  }
+  .fa-moon{
+    color: lighten($color: #000000, $amount: 50);
+  }
   .custom-control{
     .custom-control-input{
       border: none;
@@ -140,8 +146,11 @@ body{
   &.dark{
     background: #000;
     
-    .fa{
-      color: white;
+    .fa-lightbulb{
+      color: lighten($color: #000000, $amount: 50);
+    }
+    .fa-moon{
+      color: darken($color: white, $amount: 0);
     }
 
     .header {

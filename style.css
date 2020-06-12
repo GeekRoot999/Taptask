@@ -1,3 +1,11 @@
+body .fa-lightbulb {
+  color: #ffe600;
+}
+
+body .fa-moon {
+  color: gray;
+}
+
 body .custom-control .custom-control-input {
   border: none;
   outline: none;
@@ -154,7 +162,11 @@ body.dark {
   background: #000;
 }
 
-body.dark .fa {
+body.dark .fa-lightbulb {
+  color: gray;
+}
+
+body.dark .fa-moon {
   color: white;
 }
 
