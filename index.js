@@ -3,12 +3,37 @@ var addTask = document.getElementsByClassName("addBtn")[0];
 var uol = document.getElementById("myUL");
 var TaskItems = document.getElementsByClassName("task-items");
 var deleteBtn =  document.createElement("i");
+var Theme = document.querySelector('.toggle-mode');
 
-function darkMode(){
-    var dark = document.body;
-    dark.classList.toggle("dark")
+Theme.addEventListener('change', ToggleMode);
+
+function ToggleMode(){
+    var body = document.body;
+    // body.classList.toggle("dark");
+    if(Theme.checked === false) {
+        body.classList.remove('dark');
+        body.classList.add('light');
+        localStorage.setItem('mode', 'light');
+    }
+    else{
+        body.classList.remove('light');
+        body.classList.add('dark');
+        localStorage.setItem('mode', 'dark');
+    }
 }
 
+window.onload = checkMode();
+function checkMode(){
+    const localStorageMode = localStorage.getItem('mode');
+    if(localStorageMode !== null && localStorageMode === "dark"){
+        document.body.className = localStorageMode;
+        const ThemeSwitch = document.querySelector('.toggle-mode');
+        ThemeSwitch.checked = true;
+    }
+}
+
+
+// New Task
 const newTask = () => {
     const Compare = compareTask();
     if(Compare === false){
@@ -21,6 +46,7 @@ const newTask = () => {
     }
 }
 
+// Compare already exist
 const compareTask = () => {
     let isFound = false;
     var currentList = document.querySelectorAll("li");
