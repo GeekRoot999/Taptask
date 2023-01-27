@@ -1,26 +1,20 @@
-body .fa-lightbulb {
+body.light .fa-lightbulb {
   color: #ffe600;
 }
-
-body .fa-moon {
+body.light .fa-moon {
   color: gray;
 }
-
-body .custom-control .custom-control-input {
+body.light .custom-control .custom-control-input {
   border: none;
   outline: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
-
-body .custom-control .custom-control-input:focus {
+body.light .custom-control .custom-control-input:focus {
   outline: none;
   border: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
-
-body .header {
+body.light .header {
   background-color: #1fc8db;
   background-image: linear-gradient(141deg, #1fc8db 51%, #2cb5e8 75%);
   padding: 30px 40px;
@@ -29,54 +23,44 @@ body .header {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
-
-body .header:after {
+body.light .header:after {
   content: "";
   display: table;
   clear: both;
 }
-
-body .header h2 {
+body.light .header h2 {
   margin: 5px;
 }
-
-body ul {
+body.light ul {
   margin: 0;
   padding: 0;
 }
-
-body ul .add-items {
+body.light ul .add-items {
   padding: 15px 20px 15px 35px;
   border: 1px solid #fafafa;
 }
-
-body ul .add-items input {
+body.light ul .add-items input {
   margin: 0;
   border: none;
   font-size: 16px;
   width: 75%;
 }
-
-body ul .add-items input:focus, body ul .add-items input:active, body ul .add-items input:hover {
+body.light ul .add-items input:focus, body.light ul .add-items input:active, body.light ul .add-items input:hover {
   border: none;
   outline: none;
 }
-
-body ul .add-items .addBtn {
+body.light ul .add-items .addBtn {
   color: #0089d8;
   float: right;
   font-size: 16px;
   cursor: pointer;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
   margin: 10px;
 }
-
-body ul .add-items .addBtn:hover {
+body.light ul .add-items .addBtn:hover {
   color: #0069a5;
 }
-
-body ul li {
+body.light ul li {
   cursor: pointer;
   position: relative;
   padding: 12px 8px 12px 40px;
@@ -86,57 +70,54 @@ body ul li {
   list-style-type: none;
   background: #fff;
   font-size: 18px;
-  -webkit-transition: 0.2s;
   transition: 0.2s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
-
-body ul li:last-child {
+body.light ul li:last-child {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-
-body ul li:hover {
-  background: #bbe1e2;
+body.light ul li:hover {
+  background: rgb(187, 225, 226);
 }
-
-body ul li.checked {
+body.light ul li.checked {
   background: #2cb5e8;
   color: #fff;
   text-decoration: line-through;
 }
-
-body ul li.checked::before {
-  content: '';
+body.light ul li.checked::before {
+  content: "";
   position: absolute;
   border-color: #fff;
   border-style: solid;
   border-width: 0 2px 2px 0;
   top: 16px;
   left: 16px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
   height: 15px;
   width: 7px;
 }
-
-body ul li span, body ul li button {
+body.light ul li span, body.light ul li button {
   float: right;
 }
-
-body ul li .fa-trash {
+body.light ul li .fa-trash {
   padding-right: 20px;
   color: #ff4d4d;
 }
-
-body ul li .fa-trash:active, body ul li .fa-trash:hover {
+body.light ul li .fa-trash:active, body.light ul li .fa-trash:hover {
   color: red;
 }
-
-body ul li button {
+body.light ul li .fa-pen {
+  padding-right: 20px;
+  color: #9aecff;
+}
+body.light ul li .fa-pen:active, body.light ul li .fa-pen:hover {
+  color: rgb(77, 222, 255);
+}
+body.light ul li button {
   color: #2cb5e8;
   background-color: white;
   border: 1px solid #2cb5e8;
@@ -144,91 +125,72 @@ body ul li button {
   padding: 5px 10px;
   font-size: 14px;
 }
-
-body ul li button:hover {
+body.light ul li button:hover {
   color: white;
   background-color: #2cb5e8;
 }
-
-body .delete-header ul li span .fa {
+body.light .delete-header ul li span .fa {
   color: green;
 }
-
-body .delete-header ul li span .fa:active, body .delete-header ul li span .fa:hover {
+body.light .delete-header ul li span .fa:active, body.light .delete-header ul li span .fa:hover {
   color: #004d00;
 }
-
-body.dark {
+body.light.dark {
   background: #000;
 }
-
-body.dark .fa-lightbulb {
+body.light.dark .fa-lightbulb {
   color: gray;
 }
-
-body.dark .fa-moon {
+body.light.dark .fa-moon {
   color: white;
 }
-
-body.dark .header {
+body.light.dark .header {
   background-color: #1fc8db;
   background-image: linear-gradient(141deg, #1fc8db 51%, #2cb5e8 75%);
   text-align: center;
 }
-
-body.dark .header:after {
+body.light.dark .header:after {
   content: "";
   display: table;
   clear: both;
 }
-
-body.dark .header h2 {
+body.light.dark .header h2 {
   margin: 5px;
 }
-
-body.dark ul .add-items {
+body.light.dark ul .add-items {
   border: 1px solid #484848;
   background: #383838;
 }
-
-body.dark ul .add-items input {
+body.light.dark ul .add-items input {
   background: #383838;
   color: white;
 }
-
-body.dark ul li {
+body.light.dark ul li {
   border-bottom: 1px solid #484848;
   border-right: 1px solid #484848;
   border-left: 1px solid #484848;
   background: #383838;
   color: white;
 }
-
-body.dark ul li.checked {
+body.light.dark ul li.checked {
   background: #2cb5e8;
   color: #fff;
 }
-
-body.dark ul li.checked::before {
+body.light.dark ul li.checked::before {
   border-color: #fff;
 }
-
-body.dark ul li .fa-trash {
+body.light.dark ul li .fa-trash {
   color: #ff8080;
 }
-
-body.dark ul li .fa-trash:active, body.dark ul li .fa-trash:hover {
+body.light.dark ul li .fa-trash:active, body.light.dark ul li .fa-trash:hover {
   color: red;
 }
-
-body.dark ul li button {
+body.light.dark ul li button {
   color: #2cb5e8;
   background-color: black;
   border: 1px solid #2cb5e8;
 }
-
-body.dark ul li button:hover {
+body.light.dark ul li button:hover {
   color: white;
   background-color: #2cb5e8;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
