@@ -67,18 +67,8 @@ for(let i = 0; i < listTask.length; i++){
     listTask[i].addEventListener("click", function(){
         event.target.classList.toggle("checked");
     });
-    var span = document.createElement("span");
-    var deleteBtn =  document.createElement("i");
-    deleteBtn.classList.add('fa');
-    deleteBtn.classList.add('fa-trash')
-    span.appendChild(deleteBtn);
-    listTask[i].appendChild(span);
-    var span = document.createElement("span");
-    var editBtn = document.createElement('i');
-    editBtn.classList.add("fa");
-    editBtn.classList.add("fa-pen");
-    span.appendChild(editBtn);
-    listTask[i].appendChild(span);
+    createDeleteButton();
+    createEditButton();
     deleteBtn.addEventListener("click", function(){
         onClickDelete(listTask[i]);
         addToAnotherUl(listTask[i].innerText);
@@ -209,6 +199,17 @@ function createDeleteButton(){
     span.append(deletebtn);
     return span;
 }
+
+//return editButton
+function createEditButton(){
+    var span = document.createElement("span");
+    var editBtn = document.createElement('i');
+    editBtn.classList.add("fa");
+    editBtn.classList.add("fa-pen");
+    span.appendChild(editBtn);
+    return span;
+}
+
 // return restoreButton;
 function createRestoreButton(){
     var span = document.createElement('span');

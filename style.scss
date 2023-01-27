@@ -114,6 +114,13 @@ body.light{
           color: red;
         }
       }
+      .fa-pen{
+        padding-right: 20px;
+        color: lighten($color : rgb(77, 222, 255), $amount: 15);
+        &:active, &:hover{
+          color: rgb(77, 222, 255);
+        }
+      }
       
       button{
         color: #2cb5e8;
