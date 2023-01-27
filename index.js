@@ -73,11 +73,21 @@ for(let i = 0; i < listTask.length; i++){
     deleteBtn.classList.add('fa-trash')
     span.appendChild(deleteBtn);
     listTask[i].appendChild(span);
+    var span = document.createElement("span");
+    var editBtn = document.createElement('i');
+    editBtn.classList.add("fa");
+    editBtn.classList.add("fa-pen");
+    span.appendChild(editBtn);
+    listTask[i].appendChild(span);
     deleteBtn.addEventListener("click", function(){
         onClickDelete(listTask[i]);
         addToAnotherUl(listTask[i].innerText);
         console.log(listTask[i].innerText);
     })
+    editBtn.addEventListener('click', function(){
+        console.log("edit is available");
+    })
+
 }
 
 const checked = (event) => {
