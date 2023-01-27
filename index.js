@@ -67,8 +67,18 @@ for(let i = 0; i < listTask.length; i++){
     listTask[i].addEventListener("click", function(){
         event.target.classList.toggle("checked");
     });
-    createDeleteButton();
-    createEditButton();
+    var span = document.createElement("span");
+    var deleteBtn =  document.createElement("i");
+    deleteBtn.classList.add('fa');
+    deleteBtn.classList.add('fa-trash')
+    span.appendChild(deleteBtn);
+    listTask[i].appendChild(span);
+    var span = document.createElement("span");
+    var editBtn = document.createElement('i');
+    editBtn.classList.add("fa");
+    editBtn.classList.add("fa-pen");
+    span.appendChild(editBtn);
+    listTask[i].appendChild(span);
     deleteBtn.addEventListener("click", function(){
         onClickDelete(listTask[i]);
         addToAnotherUl(listTask[i].innerText);
@@ -86,22 +96,21 @@ const checked = (event) => {
 
 const onPressEnter = (e) => {
     if (e.keyCode === 13) {
-        if (inputText.value.length > 0) {
-            newTask();
-        }
-        else {
-            alert("Enter text to add Task error not here");
-        }
+        checkLength();
     }
 }
 
 const onPressAdd = () => {
+    checkLength();
+}
+
+function checkLength(){
     if (inputText.value.length > 0) {
         newTask();
     }
     else {
         alert("Enter text to add Task error not here");
-    }
+    } 
 }
 
 addTask.addEventListener("click", onPressAdd);
@@ -122,8 +131,9 @@ function addToAnotherUl(deletedValue) {
 
 function getCreateLI (title) {
     var myListDelete = createDeleteButton();
+    var myListEdit = createDeleteButton();
     var myListItem = createMyLI(title);
-    addDeleteButtonToMyLI(myListDelete,myListItem);
+    addDeleteButtonToMyLI(myListDelete,myListItem, myListEdit);
     addToMYUL(myListItem);
     myListItem.addEventListener("click", checked);
     myListDelete.addEventListener("click", function(){
@@ -199,8 +209,7 @@ function createDeleteButton(){
     span.append(deletebtn);
     return span;
 }
-
-//return editButton
+// return createButton;
 function createEditButton(){
     var span = document.createElement("span");
     var editBtn = document.createElement('i');
@@ -220,8 +229,9 @@ function createRestoreButton(){
     return span;
 }
 // return ;
-function addDeleteButtonToMyLI(deleteButton, listItem){
+function addDeleteButtonToMyLI(deleteButton, listItem, editButton){
     listItem.appendChild(deleteButton);
+    listItem.appendChild(editButton);
 }
 //return ;
 function addRestoreButtonToRestoreLI(restoreButton, listItem){
