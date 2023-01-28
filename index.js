@@ -62,7 +62,6 @@ const compareTask = () => {
 
 
 var listTask = document.querySelectorAll("li");
-console.log(listTask);
 for(let i = 0; i < listTask.length; i++){
     listTask[i].addEventListener("click", function(){
         event.target.classList.toggle("checked");
@@ -73,21 +72,10 @@ for(let i = 0; i < listTask.length; i++){
     deleteBtn.classList.add('fa-trash')
     span.appendChild(deleteBtn);
     listTask[i].appendChild(span);
-    var span = document.createElement("span");
-    var editBtn = document.createElement('i');
-    editBtn.classList.add("fa");
-    editBtn.classList.add("fa-pen");
-    span.appendChild(editBtn);
-    listTask[i].appendChild(span);
     deleteBtn.addEventListener("click", function(){
         onClickDelete(listTask[i]);
         addToAnotherUl(listTask[i].innerText);
-        console.log(listTask[i].innerText);
     })
-    editBtn.addEventListener('click', function(){
-        console.log("edit is available");
-    })
-
 }
 
 const checked = (event) => {
@@ -131,15 +119,15 @@ function addToAnotherUl(deletedValue) {
 
 function getCreateLI (title) {
     var myListDelete = createDeleteButton();
-    var myListEdit = createDeleteButton();
     var myListItem = createMyLI(title);
-    addDeleteButtonToMyLI(myListDelete,myListItem, myListEdit);
+    addDeleteButtonToMyLI(myListDelete,myListItem);
     addToMYUL(myListItem);
     myListItem.addEventListener("click", checked);
     myListDelete.addEventListener("click", function(){
         onClickDelete(myListItem);
         addToAnotherUl(myListItem.innerText);
     });
+    
 }
 
 var localStorageListItems =  window.localStorage.getItem("listItems");
@@ -162,7 +150,6 @@ function addToMYUL(listItem){
     addUL.appendChild(listItem);
     var listItems = window.localStorage.getItem("listItems") || "";
     const itemText = listItem.innerText.trim();
-    console.log("itemText", itemText, "listItems", listItems);
     if(listItems.includes(itemText)){
         return;
     }else{
@@ -177,7 +164,7 @@ function createRestoreUL(){
         restoreUL = document.createElement("ul");
         restoreUL.setAttribute('id', 'restoreUL')    
     }
-    var appendtoRestoreCol = document.getElementsByClassName("delete-header")[0];
+    var appendtoRestoreCol = document.getElementsByClassName("delete-body")[0];
     appendtoRestoreCol.appendChild(restoreUL);
     return restoreUL;
 }
@@ -209,15 +196,6 @@ function createDeleteButton(){
     span.append(deletebtn);
     return span;
 }
-// return createButton;
-function createEditButton(){
-    var span = document.createElement("span");
-    var editBtn = document.createElement('i');
-    editBtn.classList.add("fa");
-    editBtn.classList.add("fa-pen");
-    span.appendChild(editBtn);
-    return span;
-}
 
 // return restoreButton;
 function createRestoreButton(){
@@ -229,9 +207,8 @@ function createRestoreButton(){
     return span;
 }
 // return ;
-function addDeleteButtonToMyLI(deleteButton, listItem, editButton){
+function addDeleteButtonToMyLI(deleteButton, listItem){
     listItem.appendChild(deleteButton);
-    listItem.appendChild(editButton);
 }
 //return ;
 function addRestoreButtonToRestoreLI(restoreButton, listItem){

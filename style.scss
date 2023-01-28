@@ -1,149 +1,144 @@
-body.light{
-  .fa-lightbulb{
-    color: darken($color: rgb(255, 230, 0), $amount: 0);
-  }
-  .fa-moon{
-    color: lighten($color: #000000, $amount: 50);
-  }
-  .custom-control{
-    .custom-control-input{
-      border: none;
-      outline: none;
-      box-shadow: none;
-      &:focus{
+body{
+  &.light{
+    .fa-lightbulb{
+      color: darken($color: rgb(255, 230, 0), $amount: 0);
+    }
+    .fa-moon{
+      color: lighten($color: #000000, $amount: 50);
+    }
+    .custom-control{
+      .custom-control-input{
+        border: none;
         outline: none;
-        border: none;
         box-shadow: none;
-      }
-    }
-  }
-  .header {
-    background-color: #1fc8db;
-    background-image: linear-gradient(141deg, #1fc8db 51%, #2cb5e8 75%);
-    padding: 30px 40px;
-    color: white;
-    text-align: center;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    &:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-    h2{
-      margin: 5px;
-    }
-    
-  }
-  ul {
-    margin: 0;
-    padding: 0;
-    .add-items{
-      padding: 15px 20px 15px 35px;
-      border: 1px solid #fafafa;
-      input {
-        margin: 0;
-        border: none;
-        font-size: 16px;
-        width: 75%;
-        &:focus, &:active, &:hover{
-          border: none;
+        &:focus{
           outline: none;
+          border: none;
+          box-shadow: none;
         }
       }
+    }
+    .header {
+      background-color: #1fc8db;
+      background-image: linear-gradient(141deg, #1fc8db 51%, #2cb5e8 75%);
+      padding: 30px 40px;
+      color: white;
+      text-align: center;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      &:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      h2{
+        margin: 5px;
+      }
       
-      .addBtn {
-        color: #0089d8;
-        float: right;
-        font-size: 16px;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      .add-items{
+        padding: 15px 20px 15px 35px;
+        border: 1px solid #fafafa;
+        input {
+          margin: 0;
+          border: none;
+          font-size: 16px;
+          width: 75%;
+          &:focus, &:active, &:hover{
+            border: none;
+            outline: none;
+          }
+        }
+        
+        .addBtn {
+          color: #0089d8;
+          float: right;
+          font-size: 16px;
+          cursor: pointer;
+          transition: 0.3s;
+          margin: 10px;
+          &:hover {
+            color: darken($color: #0089d8, $amount: 10) ;
+          }
+        }
+      }
+      li {
         cursor: pointer;
-        transition: 0.3s;
-        margin: 10px;
+        position: relative;
+        padding: 12px 8px 12px 40px;
+        border-bottom: 1px solid #fafafa;
+        border-right: 1px solid #fafafa;
+        border-left:  1px solid #fafafa;
+        list-style-type: none;
+        background: #fff;
+        font-size: 18px;
+        transition: 0.2s;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        &:last-child{
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px ;
+        }
         &:hover {
-          color: darken($color: #0089d8, $amount: 10) ;
+          background: rgb(187, 225, 226);
         }
-      }
-    }
-    li {
-      cursor: pointer;
-      position: relative;
-      padding: 12px 8px 12px 40px;
-      border-bottom: 1px solid #fafafa;
-      border-right: 1px solid #fafafa;
-      border-left:  1px solid #fafafa;
-      list-style-type: none;
-      background: #fff;
-      font-size: 18px;
-      transition: 0.2s;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      &:last-child{
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px ;
-      }
-      &:hover {
-        background: rgb(187, 225, 226);
-      }
-      &.checked {
-        background: #2cb5e8;
-        color: #fff;
-        text-decoration: line-through;
-        &::before {
-          content: '';
-          position: absolute;
-          border-color: #fff;
-          border-style: solid;
-          border-width: 0 2px 2px 0;
-          top: 16px;
-          left: 16px;
-          transform: rotate(45deg);
-          height: 15px;
-          width: 7px;
+        &.checked {
+          background: #2cb5e8;
+          color: #fff;
+          text-decoration: line-through;
+          &::before {
+            content: '';
+            position: absolute;
+            border-color: #fff;
+            border-style: solid;
+            border-width: 0 2px 2px 0;
+            top: 16px;
+            left: 16px;
+            transform: rotate(45deg);
+            height: 15px;
+            width: 7px;
+          }
         }
-      }
-      span, button{
-        float: right;
-      }
+        span, button{
+          float: right;
+        }
 
-      .fa-trash{
-        padding-right: 20px;
-        color: lighten($color: red, $amount: 15);
-        &:active, &:hover{
-          color: red;
+        .fa-trash{
+          padding-right: 20px;
+          color: lighten($color: red, $amount: 15);
+          &:active, &:hover{
+            color: red;
+          }
         }
-      }
-      .fa-pen{
-        padding-right: 20px;
-        color: lighten($color : rgb(77, 222, 255), $amount: 15);
-        &:active, &:hover{
-          color: rgb(77, 222, 255);
-        }
-      }
-      
-      button{
-        color: #2cb5e8;
-        background-color: white;
-        border: 1px solid #2cb5e8;
-        border-radius: 2px;
-        padding: 5px 10px;
-        font-size: 14px;
-        &:hover{
-          color: white;
-        background-color: #2cb5e8;
+        
+        button{
+          color: #2cb5e8;
+          background-color: white;
+          border: 1px solid #2cb5e8;
+          border-radius: 2px;
+          padding: 5px 10px;
+          font-size: 14px;
+          &:hover{
+            color: white;
+          background-color: #2cb5e8;
+          }
         }
       }
     }
-  }
-  .delete-header{
-    ul{
-      li{
-        span{
-          .fa{
-            color:green;
-            &:active, &:hover{
-              color: darken($color: green, $amount: 10);
+    .delete-header{
+      ul{
+        li{
+          span{
+            .fa{
+              color:green;
+              &:active, &:hover{
+                color: darken($color: green, $amount: 10);
+              }
             }
           }
         }
@@ -157,13 +152,17 @@ body.light{
       color: lighten($color: #000000, $amount: 50);
     }
     .fa-moon{
-      color: darken($color: white, $amount: 0);
+      color: darken($color: #fff, $amount: 0);
     }
 
     .header {
       background-color: #1fc8db;
       background-image: linear-gradient(141deg, #1fc8db 51%, #2cb5e8 75%);
+      padding: 30px 40px;
+      color: 333;
       text-align: center;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
       &:after {
         content: "";
         display: table;
@@ -172,31 +171,86 @@ body.light{
       h2{
         margin: 5px;
       }
+      
     }
     ul {
+      margin: 0;
+      padding: 0;
       .add-items{
-        border: 1px solid #484848;
+        padding: 15px 20px 15px 35px;
+        border: 1px solid #383838;
         background: #383838;
         input {
+          margin: 0;
+          border: none;
+          font-size: 16px;
+          width: 75%;
           background: #383838;
-          color: white;
+          &:focus, &:active, &:hover{
+            border: none;
+            outline: none;
+          }
+        }
+        
+        .addBtn {
+          color: #0089d8;
+          float: right;
+          font-size: 16px;
+          cursor: pointer;
+          transition: 0.3s;
+          margin: 10px;
+          &:hover {
+            color: darken($color: #0089d8, $amount: 10) ;
+          }
         }
       }
       li {
-        border-bottom: 1px solid #484848;
-        border-right: 1px solid #484848;
-        border-left:  1px solid #484848;
+        cursor: pointer;
+        position: relative;
+        padding: 12px 8px 12px 40px;
+        border-bottom: 1px solid #383838;
+        border-right: 1px solid #383838;
+        border-left:  1px solid #383838;
+        list-style-type: none;
         background: #383838;
-        color: white;
+        font-size: 18px;
+        transition: 0.2s;
+        color: #fff;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        &:last-child{
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px ;
+        }
+        &:hover {
+          background: rgb(187, 225, 226);
+        }
         &.checked {
           background: #2cb5e8;
-          color: #fff;
+          color: #383838;
+          text-decoration: line-through;
           &::before {
-            border-color: #fff;
+            content: '';
+            position: absolute;
+            border-color: #383838;
+            border-style: solid;
+            border-width: 0 2px 2px 0;
+            top: 16px;
+            left: 16px;
+            transform: rotate(45deg);
+            height: 15px;
+            width: 7px;
           }
         }
+        span, button{
+          float: right;
+        }
+
         .fa-trash{
-          color: lighten($color: red, $amount: 25);
+          padding-right: 20px;
+          color: lighten($color: red, $amount: 15);
           &:active, &:hover{
             color: red;
           }
@@ -204,11 +258,28 @@ body.light{
         
         button{
           color: #2cb5e8;
-          background-color: black;
+          background-color: #383838;
           border: 1px solid #2cb5e8;
+          border-radius: 2px;
+          padding: 5px 10px;
+          font-size: 14px;
           &:hover{
-            color: white;
-            background-color: #2cb5e8;
+            color: #383838;
+          background-color: #2cb5e8;
+          }
+        }
+      }
+    }
+    .delete-header{
+      ul{
+        li{
+          span{
+            .fa{
+              color:green;
+              &:active, &:hover{
+                color: darken($color: green, $amount: 10);
+              }
+            }
           }
         }
       }
